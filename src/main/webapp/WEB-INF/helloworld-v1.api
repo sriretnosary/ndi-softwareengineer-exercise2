@@ -1,0 +1,224 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://your project id.appspot.com/_ah/api",
+  "name" : "helloworld",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://your project id.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "methods" : {
+    "helloworld.greetings.deleteAllGreetings" : {
+      "path" : "allgreetings",
+      "httpMethod" : "post",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "your web client id", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "sg.ndi.exercise.e2.Greetings.deleteAllGreetings",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "helloworld.greetings.createGreeting" : {
+      "path" : "createGreeting",
+      "httpMethod" : "post",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "your web client id", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "sg.ndi.exercise.e2.Greetings.createGreeting",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "helloworld.greetings.deleteGreeting" : {
+      "path" : "greeting/{key}",
+      "httpMethod" : "post",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "your web client id", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "sg.ndi.exercise.e2.Greetings.deleteGreeting",
+      "request" : {
+        "parameters" : {
+          "key" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "helloworld.greetings.getGreetingByKey" : {
+      "path" : "hellogreeting/{key}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "your web client id", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "sg.ndi.exercise.e2.Greetings.getGreetingByKey",
+      "request" : {
+        "parameters" : {
+          "key" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "helloworld.greetings.findGreetingByMessage" : {
+      "path" : "findGreetingByMessage/{message}",
+      "httpMethod" : "post",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "your web client id", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "sg.ndi.exercise.e2.Greetings.findGreetingByMessage",
+      "request" : {
+        "parameters" : {
+          "message" : {
+            "type" : "string",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "helloworld.greetings.updateGreeting" : {
+      "path" : "hellogreeting",
+      "httpMethod" : "post",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "your web client id", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "sg.ndi.exercise.e2.Greetings.updateGreeting",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "helloworld.greetings.listGreetings" : {
+      "path" : "hellogreeting",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "your web client id", "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "sg.ndi.exercise.e2.Greetings.listGreetings",
+      "request" : {
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "HelloGreeting" : {
+        "id" : "HelloGreeting",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          }
+        }
+      },
+      "HelloGreetingCollection" : {
+        "id" : "HelloGreetingCollection",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "HelloGreeting"
+            }
+          }
+        }
+      }
+    },
+    "methods" : {
+      "sg.ndi.exercise.e2.Greetings.deleteAllGreetings" : {
+        "response" : {
+          "$ref" : "HelloGreetingCollection"
+        }
+      },
+      "sg.ndi.exercise.e2.Greetings.createGreeting" : {
+        "request" : {
+          "$ref" : "HelloGreeting"
+        },
+        "response" : {
+          "$ref" : "HelloGreeting"
+        }
+      },
+      "sg.ndi.exercise.e2.Greetings.deleteGreeting" : {
+        "response" : {
+          "$ref" : "HelloGreeting"
+        }
+      },
+      "sg.ndi.exercise.e2.Greetings.getGreetingByKey" : {
+        "response" : {
+          "$ref" : "HelloGreeting"
+        }
+      },
+      "sg.ndi.exercise.e2.Greetings.findGreetingByMessage" : {
+        "response" : {
+          "$ref" : "HelloGreetingCollection"
+        }
+      },
+      "sg.ndi.exercise.e2.Greetings.updateGreeting" : {
+        "request" : {
+          "$ref" : "HelloGreeting"
+        },
+        "response" : {
+          "$ref" : "HelloGreeting"
+        }
+      },
+      "sg.ndi.exercise.e2.Greetings.listGreetings" : {
+        "response" : {
+          "$ref" : "HelloGreetingCollection"
+        }
+      }
+    }
+  }
+}

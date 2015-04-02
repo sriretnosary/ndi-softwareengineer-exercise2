@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 2</title>
+    <script type="text/javascript" src="/js/base.js"></script>
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/bootstrap/css/bootstrap-responsive.css">
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">Exercise 2</a>
+            <div class="nav-collapse collapse pull-right">
+                <a href="javascript:void(0);" class="btn" id="signinButton">Sign in</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+
+    <form action="javascript:void(0);">
+        <div><input id="listGreetings" type="submit" class="btn btn-small" disabled value="Example: List Greetings"></div>
+    </form>
+
+    <form action="javascript:void(0);">
+        <div><input id="testCase" type="submit" class="btn btn-small" disabled value="Test Case: Relace Elizabeth with Eileen!"></div>
+    </form>
+
+
+    <div id="outputLog"></div>
+    <script type="text/javascript">
+        function init() {
+            google.devrel.samples.hello.init('//' + window.location.host + '/_ah/api');
+        }
+    </script>
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+</div>
+</body>
+</html>
