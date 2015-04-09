@@ -24,7 +24,7 @@ google.devrel.samples.hello = google.devrel.samples.hello || {};
  * @type {string}
  */
 // google.devrel.samples.hello.CLIENT_ID =
-google.devrel.samples.hello.CLIENT_ID = 'your web client id';
+google.devrel.samples.hello.CLIENT_ID = '374707352583-31nlddj76u8dgkeqm6khkoc9435bom16.apps.googleusercontent.com';
 
 /**
  * Scopes used by the application.
