@@ -24,7 +24,7 @@ google.devrel.samples.hello = google.devrel.samples.hello || {};
  * @type {string}
  */
 // google.devrel.samples.hello.CLIENT_ID =
-google.devrel.samples.hello.CLIENT_ID = '374707352583-31nlddj76u8dgkeqm6khkoc9435bom16.apps.googleusercontent.com';
+google.devrel.samples.hello.CLIENT_ID = '374707352583-vnothhk0sp5cuh4oc576e0udh9sm1q2q.apps.googleusercontent.com';
 
 /**
  * Scopes used by the application.
@@ -143,16 +143,16 @@ google.devrel.samples.hello.enableButtons = function() {
 			var greetingsToElizabeth = resp.result;
 			google.devrel.samples.hello.printResults('findGreetingByMessage', greetingsToElizabeth);
 			if(!greetingsToElizabeth || !greetingsToElizabeth.items || greetingsToElizabeth.items.length < 1) {
-				google.devrel.samples.hello.printLog('test case failed!!');
+				google.devrel.samples.hello.printLog('test case failed!! satu');
 				return;
 			}
 			for(var i = 0; i < greetingsToElizabeth.items.length; i++) {
-				greetingToElizabeth.message = 'Hello Eileen!';
+				greetingsToElizabeth.message = 'Hello Eileen!';
 				google.devrel.samples.hello.updateGreeting(greetingsToElizabeth.items[i]).then(function(resp) {
 					var greetingToEileen = resp.result;
 					google.devrel.samples.hello.printResult('updateGreeting', greetingToEileen);
 					if(!greetingToEileen) {
-						google.devrel.samples.hello.printLog('test case failed!!');
+						google.devrel.samples.hello.printLog('test case failed!! dua');
 						return {
 							then : function(f) {
 								// f is ignored.
