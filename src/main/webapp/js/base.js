@@ -143,16 +143,16 @@ google.devrel.samples.hello.enableButtons = function() {
 			var greetingsToElizabeth = resp.result;
 			google.devrel.samples.hello.printResults('findGreetingByMessage', greetingsToElizabeth);
 			if(!greetingsToElizabeth || !greetingsToElizabeth.items || greetingsToElizabeth.items.length < 1) {
-				google.devrel.samples.hello.printLog('test case failed!! satu');
+				google.devrel.samples.hello.printLog('test case failed!!');
 				return;
 			}
 			for(var i = 0; i < greetingsToElizabeth.items.length; i++) {
-				greetingsToElizabeth.message = 'Hello Eileen!';
+				greetingsToElizabeth.message === 'Hello Eileen!';
 				google.devrel.samples.hello.updateGreeting(greetingsToElizabeth.items[i]).then(function(resp) {
 					var greetingToEileen = resp.result;
 					google.devrel.samples.hello.printResult('updateGreeting', greetingToEileen);
 					if(!greetingToEileen) {
-						google.devrel.samples.hello.printLog('test case failed!! dua');
+						google.devrel.samples.hello.printLog('test case failed!!');
 						return {
 							then : function(f) {
 								// f is ignored.

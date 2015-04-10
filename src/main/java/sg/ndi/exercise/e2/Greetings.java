@@ -76,9 +76,11 @@ public class Greetings {
   
   public HelloGreeting getGreetingByKey(User user, @Named("key") String keyStr)  {
 	  ArrayList<HelloGreeting> storedGreetings = list();
+	  HelloGreeting storedKeyGreeting = new HelloGreeting();
 	    for(HelloGreeting greeting : storedGreetings) {
 	    	String greetKey = greeting.getKey();
 	    	if(greetKey.equals(keyStr)){
+	    		storedKeyGreeting = greeting;
 	    	}
 	    }
 	    return storedKeyGreeting;
