@@ -54,20 +54,34 @@ public class Greetings {
   }
   
   @ApiMethod(httpMethod = "post")
-  public ArrayList<HelloGreeting> findGreetingByMessage(User user, @Named("message") String message) {
-    // TODO Implement me.
-    return null;
+  public ArrayList<HelloGreeting> findGreetingByMessage(User user, @Named("message") String message) throws EntityNotFoundException {
+	  ArrayList<HelloGreeting> storedGreetings = list();
+	  ArrayList<HelloGreeting> storedGreeting = new ArrayList<HelloGreeting>();
+	    for(HelloGreeting greeting : storedGreetings) {
+	    	String greetMessage = greeting.getMessage();
+	    	if(greetMessage.equals(message)){
+	    		storedGreeting.add(greeting);
+	    	}
+	    }
+	    return storedGreeting;
+	    
+	
   }
   
   @ApiMethod(httpMethod = "post")
-  public HelloGreeting updateGreeting(User user, HelloGreeting greeting) {
-    // TODO Implement me.
-    return null;
+  public HelloGreeting updateGreeting(User user, HelloGreeting greeting) throws EntityNotFoundException {
+  		delete(greeting.getKey());
+  		return (create(greeting));
   }
   
-  public HelloGreeting getGreetingByKey(User user, @Named("key") String keyStr) {
-    // TODO Implement me.
-    return null;
+  public HelloGreeting getGreetingByKey(User user, @Named("key") String keyStr)  {
+	  ArrayList<HelloGreeting> storedGreetings = list();
+	    for(HelloGreeting greeting : storedGreetings) {
+	    	String greetKey = greeting.getKey();
+	    	if(greetKey.equals(keyStr)){
+	    	}
+	    }
+	    return storedKeyGreeting;
   }
   
   
